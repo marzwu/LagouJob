@@ -1,16 +1,16 @@
 <joblist>
     <type name="技术">
         <!--<job parameter="数据挖掘">数据挖掘</job>-->
-        <!--<job parameter="Java">Java</job>-->
+        <job parameter="Java">Java</job>
         <!--<job parameter="PHP">PHP</job>-->
-        <!--<job parameter="Python">Python</job>-->
+        <job parameter="Python">Python</job>
         <!--<job parameter="Hadoop">Hadoop</job>-->
         <!--<job parameter="搜索算法">搜索算法</job>-->
         <!--<job parameter="精准推荐">精准推荐</job>-->
         <!--<job parameter="HTML5">HTML5</job>-->
         <!--<job parameter="Android">Android</job>-->
         <!--<job parameter="iOS">iOS</job>-->
-        <job parameter="计算机视觉">计算机视觉</job>
+        <!--<job parameter="计算机视觉">计算机视觉</job>-->
         <!--<job parameter="架构师">架构师</job>-->
     </type>
 
