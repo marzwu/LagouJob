@@ -1,8 +1,12 @@
 import os
 
 import requests
+import time
 
 from util import toolkit
+
+request_batch_count = 100
+request_count = 0
 
 
 def scrapy(jobname):
@@ -54,6 +58,14 @@ def scrapy(jobname):
 
         num += 1
         # time.sleep(2)
+
+        global request_count, request_batch_count
+        request_count += 1
+        if request_count >= request_batch_count:
+            request_count = 0
+
+            print('sleep')
+            time.sleep(60)
 
 
 if __name__ == '__main__':

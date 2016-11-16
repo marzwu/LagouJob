@@ -1,7 +1,7 @@
 <joblist>
     <type name="技术">
         <!--<job parameter="数据挖掘">数据挖掘</job>-->
-        <job parameter="Java">Java</job>
+        <!--<job parameter="Java">Java</job>-->
         <!--<job parameter="PHP">PHP</job>-->
         <job parameter="Python">Python</job>
         <!--<job parameter="Hadoop">Hadoop</job>-->
