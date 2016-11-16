@@ -1,5 +1,6 @@
-import jieba.analyse
 import os
+
+import jieba.analyse
 
 
 def analyse(strcontent, stopwordspath, userdictpath):

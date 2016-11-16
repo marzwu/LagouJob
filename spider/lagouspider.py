@@ -1,5 +1,4 @@
 import os
-import time
 
 import requests
 
@@ -59,6 +58,10 @@ def scrapy(jobname):
 
 if __name__ == '__main__':
     configmap = toolkit.readconfig('../job.xml')
+
+    datapath = '../data'
+    if not os.path.exists(datapath):
+        os.mkdir(datapath)
 
     for item, value in configmap.items():
         for job in value:

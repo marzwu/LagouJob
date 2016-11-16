@@ -1,7 +1,7 @@
 import os
+import time
 
 import requests
-import time
 from bs4 import BeautifulSoup
 from openpyxl import load_workbook
 
