@@ -4,6 +4,7 @@ import time
 import requests
 
 from proxy import proxy
+from proxy import random_agent
 from util import toolkit
 
 request_batch_count = 100
@@ -36,6 +37,8 @@ def scrapy(jobname):
         'Upgrade-Insecure-Requests': '1',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36 FirePHP/0.7.4'
     }
+
+    headers['User-Agent'] = random_agent.randomAgent()
     # response = requests.post(req_url, params={'first': 'false', 'pn': 1, 'kd': jobname}, headers=headers)
     response = urlproxy.post(req_url, params={'first': 'false', 'pn': 1, 'kd': jobname}, headers=headers)
     try:
@@ -55,6 +58,7 @@ def scrapy(jobname):
     while flag:
         payload = {'first': 'false', 'pn': str(num), 'kd': jobname}
 
+        headers['User-Agent'] = random_agent.randomAgent()
         # response = requests.post(req_url, params=payload, headers=headers)
         response = urlproxy.post(req_url, params=payload, headers=headers)
         if num > maxpagenum:
@@ -62,7 +66,7 @@ def scrapy(jobname):
 
         if response.status_code == 200:
             try:
-              job_json = response.json()['content']['positionResult']['result']
+                job_json = response.json()['content']['positionResult']['result']
             except Exception as e:
                 print(e)
                 print(response)
@@ -80,7 +84,7 @@ def scrapy(jobname):
             print('connect error! url = ' + req_url)
 
         num += 1
-        # time.sleep(2)
+        time.sleep(.5)
 
         global request_count, request_batch_count
         request_count += 1
