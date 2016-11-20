@@ -46,6 +46,7 @@ def scrapy(jobname):
     except Exception as e:
         print(e)
         print(response)
+        raise e
 
     flag = True
     num = 1
@@ -70,6 +71,7 @@ def scrapy(jobname):
             except Exception as e:
                 print(e)
                 print(response)
+                raise e
 
             print('正在爬取第 ' + str(num) + ' 页的数据...')
             print(job_json)
