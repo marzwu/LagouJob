@@ -1,5 +1,7 @@
+# coding=utf8
 import os
 import time
+from urllib.parse import unquote
 
 import requests
 
@@ -45,7 +47,7 @@ def scrapy(jobname):
         maxpagenum = int(response.json()['content']['positionResult']['totalCount']) / 15
     except Exception as e:
         print(e)
-        print(response)
+        print(response.content if response.content is str else response)
         raise e
 
     flag = True
@@ -70,7 +72,7 @@ def scrapy(jobname):
                 job_json = response.json()['content']['positionResult']['result']
             except Exception as e:
                 print(e)
-                print(response)
+                print(unquote(response.content, 'gbk'))
                 raise e
 
             print('正在爬取第 ' + str(num) + ' 页的数据...')
