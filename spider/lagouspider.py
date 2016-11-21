@@ -75,6 +75,7 @@ def scrapy(jobname):
                 print(unquote(response.content, 'gbk'))
                 raise e
 
+            print(time.strftime('%Y-%m-%d %X', time.localtime()))
             print('正在爬取第 ' + str(num) + ' 页的数据...')
             print(job_json)
 
